@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Elavu — Rooted in peace.</title>
+<meta name="description" content="Elavu is a forest retreat in Mamalakandam, Ernakulam, Kerala: A-frame villas, a natural pool and campfire nights.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#1e3335;--slate:#2b3a3f;--moss:#3a5345;--linen:#f0f3f4;--bg:#0e1718;--char:#121a1b;--mute:#9fb0b2;--sage:#8fb39b;--line:rgba(240,243,244,.14);--serif:"Cormorant Garamond",ui-serif,Georgia,serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--linen);font:300 16px/1.65 Inter,ui-sans-serif,system-ui,sans-serif}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1}
+h2{font-size:clamp(34px,5vw,54px);margin-bottom:14px;text-wrap:balance}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+section{padding:96px 24px}
+#gallery,#experiences,#location{background:var(--char)}
+.wrap{max-width:1120px;margin:auto}
+.lead{color:var(--mute);max-width:560px}
+.btn{display:inline-block;padding:13px 26px;border:1px solid var(--moss);background:var(--moss);color:#fff;font:500 15px Inter,sans-serif;cursor:pointer;transition:background .2s}
+.btn:hover{background:#4a6a58}
+.btn.ghost{background:transparent;border-color:rgba(240,243,244,.4)}
+.btn.ghost:hover{background:rgba(240,243,244,.1)}
+.btn.sm{padding:8px 18px;font-size:14px}
+:focus-visible{outline:2px solid var(--sage);outline-offset:3px}
+nav{position:fixed;inset:0 0 auto;z-index:50;padding:18px 24px;transition:background .3s,padding .3s}
+nav.on{background:rgba(14,23,24,.94);backdrop-filter:blur(10px);padding:11px 24px}
+nav .wrap,.rt{display:flex;align-items:center;gap:20px}
+nav .wrap{justify-content:space-between}
+.logo{font:600 30px var(--serif);letter-spacing:.06em}
+.links{display:flex;gap:26px;font-size:15px}
+.links a:hover,.phone:hover{color:var(--sage)}
+.phone{font-size:14px;color:var(--mute)}
+.burger{display:none;background:none;border:0;color:inherit;font-size:26px;cursor:pointer}
+.hero{position:relative;min-height:100vh;display:grid;place-items:center;text-align:center;overflow:hidden;padding:120px 24px 80px}
+.hero video,.ov{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ov{background:rgba(30,51,53,.65)}
+.hero .in{position:relative;max-width:720px;animation:up 1.1s both}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+.hero h1{font-size:clamp(64px,13vw,140px);letter-spacing:.04em}
+.tag{font:italic 400 clamp(24px,3.2vw,34px) var(--serif);margin:6px 0 16px}
+.hero .lead{margin:0 auto}
+.cta{margin-top:32px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.tabs,.chips{display:flex;gap:8px;flex-wrap:wrap;margin:32px 0 22px}
+.tabs button,.chip{background:transparent;color:var(--linen);border:1px solid rgba(240,243,244,.25);padding:10px 20px;font:400 15px Inter,sans-serif;cursor:pointer;transition:background .2s}
+.tabs button:hover,.chip:hover{background:rgba(240,243,244,.08)}
+[aria-selected=true],[aria-pressed=true]{background:var(--moss)!important;border-color:var(--moss)!important}
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+figure{margin:0}
+.vids video{width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--teal)}
+figcaption{font-size:14px;color:var(--mute);margin-top:8px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));grid-auto-rows:220px;grid-auto-flow:dense;gap:12px}
+.tile{position:relative;padding:0;border:0;overflow:hidden;cursor:zoom-in;background:var(--teal)}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.tile:hover img{transform:scale(1.05)}
+.tile span{position:absolute;inset:auto 0 0;padding:30px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.72));font:500 19px var(--serif);text-align:left;color:#fff}
+.tall{grid-row:span 2}.wide{grid-column:span 2}
+dialog{border:0;background:none;padding:0;max-width:92vw;max-height:92vh}
+dialog::backdrop{background:rgba(0,0,0,.88)}
+dialog img{max-height:90vh;object-fit:contain;cursor:zoom-out}
+.pk,.am{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px;margin-top:40px}
+.card{background:var(--teal);border:1px solid var(--line);padding:32px 28px;display:flex;flex-direction:column}
+.card h3{font-size:32px}
+.card .t{color:var(--sage);margin:2px 0 14px;font-size:15px}
+.price{font:500 40px var(--serif)}
+.price small{font:300 13px Inter,sans-serif;color:var(--mute)}
+.card ul{list-style:none;padding:0;margin:18px 0 26px;flex:1;display:grid;gap:10px;font-size:14px;color:#cfd9db}
+.card li{padding-left:16px;position:relative}
+.card li::before{content:"";position:absolute;left:0;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--sage)}
+.am>div{padding:28px;background:var(--slate)}
+.am svg{color:var(--sage);margin-bottom:14px}
+.am h3{font-size:25px;margin-bottom:8px}
+.am p{font-size:14px;color:var(--mute)}
+.bk,.loc{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;margin-top:40px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:6px;font-size:14px;color:var(--mute)}
+.full{grid-column:1/-1}
+input,select,textarea{font:300 15px Inter,sans-serif;background:var(--teal);color:var(--linen);border:1px solid rgba(240,243,244,.2);padding:12px;width:100%;border-radius:0;color-scheme:dark}
+.sum{background:var(--teal);padding:28px;align-self:start;border:1px solid var(--line)}
+.sum h3{font-size:28px}
+.sum dl{display:grid;grid-template-columns:1fr auto;gap:10px;margin:16px 0}
+.sum dd{margin:0;text-align:right}
+.tot{border-top:1px solid var(--line);padding-top:12px;margin-bottom:20px}
+.tot dd{font:500 28px var(--serif)}
+.sum .btn{width:100%;text-align:center}
+#err{color:#f2b8a0;font-size:14px;min-height:22px;margin-top:10px}
+iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(.4)}
+.dist{list-style:none;padding:0;margin:18px 0 22px}
+.dist li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+footer{padding:48px 24px;border-top:1px solid var(--line);text-align:center;color:var(--mute);font-size:14px}
+footer a:hover{color:var(--sage)}
+.wf{position:fixed;right:20px;bottom:20px;z-index:40;background:#25d366;color:#08240f;font-weight:500;padding:13px 20px;border-radius:99px;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+@media(max-width:860px){.burger{display:block}.phone{display:none}.links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--bg);padding:20px 24px;gap:16px}.links.open{display:flex}.bk,.loc{grid-template-columns:1fr}}
+@media(max-width:600px){.wide{grid-column:auto}form{grid-template-columns:1fr}section{padding:72px 20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero .in{animation:none}.tile img{transition:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap">
+  <a href="#top" class="logo" data-e="name"></a>
+  <div class="links" id="links"><a href="#space">The space</a><a href="#gallery">Gallery</a><a href="#packages">Packages</a><a href="#experiences">Experiences</a><a href="#location">Location</a></div>
+  <div class="rt"><a class="phone" id="ph" data-e="phone"></a><a href="#book" class="btn sm">Book a stay</a><button class="burger" id="bg" aria-label="Menu" aria-expanded="false">☰</button></div>
+</div></nav>
+
+<main>
+<header class="hero" id="top">
+  <video id="hv" autoplay muted loop playsinline></video><div class="ov"></div>
+  <div class="in">
+    <p data-e="loc"></p>
+    <h1 data-e="name"></h1>
+    <p class="tag" data-e="tagline"></p>
+    <p class="lead">A forest retreat of A-frame villas, a spring-fed pool and quiet campfire nights.</p>
+    <div class="cta"><a class="btn" href="#book">Plan your stay</a><a class="btn ghost" href="#space">Explore the space</a></div>
+  </div>
+</header>
+
+<section id="space"><div class="wrap">
+  <h2>Two buildings, four suites, one canopy.</h2>
+  <p class="lead">Choose a building and walk through each floor before you arrive.</p>
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <div class="vids" id="vids" role="tabpanel"></div>
+</div></section>
+
+<section id="gallery"><div class="wrap">
+  <h2>Moments from the forest</h2>
+  <div class="chips" id="chips"></div>
+  <div class="gal" id="gal"></div>
+</div></section>
+
+<section id="packages"><div class="wrap">
+  <h2>Choose your stay</h2>
+  <p class="lead">From a single floor for two to the whole sanctuary.</p>
+  <div class="pk" id="pk"></div>
+</div></section>
+
+<section id="experiences"><div class="wrap">
+  <h2>Slow, unhurried days</h2>
+  <p class="lead">Everything here is built around switching off.</p>
+  <div class="am" id="am"></div>
+</div></section>
+
+<section id="book"><div class="wrap">
+  <h2>Plan your stay</h2>
+  <p class="lead">Pick your dates and send the enquiry on WhatsApp. We’ll confirm availability with you directly.</p>
+  <div class="bk">
+    <form id="bf" novalidate>
+      <label class="full">Package<select id="bp"></select></label>
+      <label>Check-in<input type="date" id="ci"></label>
+      <label>Check-out<input type="date" id="co"></label>
+      <label>Guests<input type="number" id="gu" min="1" value="2"></label>
+      <label>Your name<input id="nm" autocomplete="name"></label>
+      <label class="full">Notes (optional)<textarea id="nt" rows="3"></textarea></label>
+    </form>
+    <aside class="sum">
+      <h3>Your estimate</h3>
+      <dl><dt>Package</dt><dd id="sp"></dd><dt>Rate per night</dt><dd id="sr"></dd><dt>Nights</dt><dd id="sn"></dd></dl>
+      <dl class="tot"><dt>Total</dt><dd id="st"></dd></dl>
+      <a id="wa" class="btn" target="_blank" rel="noopener">Send enquiry on WhatsApp</a>
+      <p id="err" role="alert"></p>
+    </aside>
+  </div>
+</div></section>
+
+<section id="location"><div class="wrap">
+  <h2>Find us</h2>
+  <div class="loc">
+    <iframe title="Map of Elavu" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div>
+      <p data-e="loc"></p>
+      <ul class="dist" id="dist"></ul>
+      <a class="btn ghost" id="ig" target="_blank" rel="noopener">Follow on Instagram</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <p>© <span id="yr"></span> <span data-e="name"></span>. <span data-e="tagline"></span></p>
+  <p><span data-e="loc"></span> · <a id="fp" data-e="phone"></a></p>
+</footer>
+<a class="wf" id="wf" target="_blank" rel="noopener">Chat on WhatsApp</a>
+<dialog id="lb"><img alt=""></dialog>
+
+<script>
+/* ===== EDIT THIS BLOCK: your details, media and prices ===== */
+const E={name:"Elavu",tagline:"Rooted in peace.",wa:"910000000000",phone:"+91 00000 00000",ig:"https://instagram.com/elavu",loc:"Mamalakandam, Ernakulam, Kerala"};
+const U=(id,w=1000)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+const V1="https://cdn.pixabay.com/video/2020/12/15/59292-492740991_large.mp4",
+      V2="https://cdn.pixabay.com/video/2022/10/23/136182-764387455_large.mp4",
+      V3="https://cdn.pixabay.com/video/2017/03/01/8043-206222758_large.mp4";
+const HERO={video:V1,poster:U("1473773508845-188df298d2d1",1920)};
+const MAP="https://www.google.com/maps?q=Mamalakandam%2C%20Kerala&output=embed";
+// building -> [floor, poster, video]
+const WALK={
+  "A-Frame Canopy Villa":[["Ground Floor",U("1505693416388-ac5ce068fe85",1200),V2],["Upper Floor",U("1522708323590-d24dbb6b0261",1200),V3]],
+  "The Plantation House":[["Ground Floor",U("1566073771259-6a850609f446",1200),V2],["Upper Floor",U("1611892440504-42a79dfb7953",1200),V1]]
+};
+// [category, title, unsplash photo id, size: ""|"tall"|"wide"]
+const G=[
+  ["Room Walkarounds","A-Frame Interior","1505693416388-ac5ce068fe85","tall"],
+  ["Natural Pool","Forest Pool, Canopy Overhead","1507525428034-b723cf961d3d","wide"],
+  ["Misty Forest Views","Morning Mist Over Mamalakandam","1473773508845-188df298d2d1",""],
+  ["Campfire Nights","Campfire &amp; BBQ Under the Stars","1526279345875-7df7dff4f0d9",""],
+  ["Misty Forest Views","Rainforest Canopy","1448375240586-882707db888b","wide"],
+  ["Room Walkarounds","Plantation House Bedroom","1566073771259-6a850609f446","tall"],
+  ["Natural Pool","Stone Edges &amp; Moss","1433086966358-54859d0ea738",""],
+  ["Campfire Nights","Quiet Embers","1419242902214-272b3f66ee7a",""]
+];
+// price = per night (INR); max = guest limit used by the booking form
+const P=[
+  {id:"couple",name:"Couple Escape",tag:"1 room, 1 floor",price:4500,cap:"2 adults",max:2,blurb:"One floor in either building — a single King room wrapped in canopy.",inc:["1 floor in either building (1 King Room)","Complimentary breakfast and dinner for 2 adults","Access to natural pool, campfire area and Wi-Fi"]},
+  {id:"building",name:"The Building Takeover",tag:"6-pack, entire building",price:8000,cap:"Up to 6 guests",max:6,blurb:"Rent an entire 2-story building — both rooms, both floors, total privacy.",inc:["Entire 2-story building (2 rooms, 2 floors)","Complimentary breakfast for up to 6 guests","Access to pool, campfire, BBQ area and Wi-Fi"]},
+  {id:"sanctuary",name:"The Entire Sanctuary",tag:"12-pack, full property",price:16000,cap:"Up to 12 guests",max:12,blurb:"Both buildings, all four suites — complete exclusive access to the resort.",inc:["Both buildings, all 4 rooms across both structures","Complimentary breakfast for up to 12 guests","Complete exclusive access to resort, pool, campfire and kitchen"]}
+];
+const A=[
+  ["Waves","Natural Forest Pool","Immersed directly under the tree canopy — a quiet, spring-fed pool framed by ferns."],
+  ["Flame","Campfire &amp; BBQ Zone","A dedicated outdoor spot for quiet evening fires and slow BBQ under the stars."],
+  ["ChefHat","Separate Guest Kitchen","Available to guests upon request (chargeable) — cook at your own quiet pace."],
+  ["Wifi","Free High-Speed Wi-Fi","Stay reachable if you must, then switch it off and sink into the silence."]
+];
+const D=[["Kothamangalam","~32 km"],["Cochin International Airport (COK)","~68 km"],["Aluva Railway Station","~69 km"]];
+/* ===== END EDIT BLOCK ===== */
+
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const inr=n=>"₹"+n.toLocaleString("en-IN");
+const wa=t=>`https://wa.me/${E.wa}?text=${encodeURIComponent(t)}`;
+const IC={
+  Waves:'<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>',
+  Flame:'<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>',
+  ChefHat:'<path d="M6 13.9A4 4 0 0 1 7.4 6a5.1 5.1 0 0 1 1-1.5 5 5 0 0 1 7.1 0A5.1 5.1 0 0 1 16.6 6 4 4 0 0 1 18 13.9V21H6zM6 17h12"/>',
+  Wifi:'<path d="M5 12.6a11 11 0 0 1 14.1 0M1.4 9a16 16 0 0 1 21.2 0M8.5 16.1a6 6 0 0 1 7 0M12 20h.01"/>'
+};
+
+// Static text from the EDIT block
+$$("[data-e]").forEach(el=>el.textContent=E[el.dataset.e]);
+$("#ph").href=$("#fp").href="tel:"+E.phone.replace(/\s/g,"");
+$("#ig").href=E.ig;$("#yr").textContent=new Date().getFullYear();
+$("#wf").href=wa(`Hello ${E.name}! I’d like to know more about staying with you.`);
+$("iframe").src=MAP;
+$(".hero").style.background=`url(${HERO.poster}) center/cover`;
+$("#hv").poster=HERO.poster;$("#hv").src=HERO.video;
+$("#dist").innerHTML=D.map(([p,v])=>`<li><span>${p}</span><span>${v}</span></li>`).join("");
+
+// Navbar
+const nav=$("#nav"),lk=$("#links"),bg=$("#bg");
+addEventListener("scroll",()=>nav.classList.toggle("on",scrollY>40),{passive:true});
+dispatchEvent(new Event("scroll"));
+bg.onclick=()=>bg.setAttribute("aria-expanded",lk.classList.toggle("open"));
+lk.onclick=e=>{if(e.target.tagName==="A"){lk.classList.remove("open");bg.setAttribute("aria-expanded","false")}};
+
+// Walkthrough tabs
+const keys=Object.keys(WALK);
+$("#tabs").innerHTML=keys.map(k=>`<button role="tab" data-k="${k}">${k}</button>`).join("");
+const show=k=>{
+  $$("#tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.k===k));
+  $("#vids").innerHTML=WALK[k].map(([f,po,s])=>`<figure><video controls preload="none" playsinline poster="${po}" src="${s}"></video><figcaption>Walkaround: ${k} — ${f}</figcaption></figure>`).join("");
+};
+$("#tabs").onclick=e=>{const k=e.target.dataset.k;if(k)show(k)};
+show(keys[0]);
+
+// Gallery filter + lightbox
+$("#chips").innerHTML=["All",...new Set(G.map(g=>g[0]))].map((c,i)=>`<button class="chip" aria-pressed="${!i}" data-c="${c}">${c}</button>`).join("");
+$("#gal").innerHTML=G.map(([c,t,id,s])=>`<button class="tile ${s}" data-c="${c}" data-id="${id}"><img loading="lazy" src="${U(id)}" alt="${t}"><span>${t}</span></button>`).join("");
+$("#chips").onclick=e=>{
+  const c=e.target.dataset.c;if(!c)return;
+  $$(".chip").forEach(b=>b.setAttribute("aria-pressed",b===e.target));
+  $$(".tile").forEach(t=>t.hidden=c!=="All"&&t.dataset.c!==c);
+};
+const lb=$("#lb");
+$("#gal").onclick=e=>{const t=e.target.closest(".tile");if(t){$("#lb img").src=U(t.dataset.id,1600);lb.showModal()}};
+lb.onclick=()=>lb.close();
+
+// Packages + amenities
+$("#pk").innerHTML=P.map(p=>`<article class="card"><h3>${p.name}</h3><p class="t">${p.tag}</p><p class="price">${inr(p.price)} <small>per night · ${p.cap}</small></p><p>${p.blurb}</p><ul>${p.inc.map(i=>`<li>${i}</li>`).join("")}</ul><a href="#book" class="btn" data-p="${p.id}">Book this package</a></article>`).join("");
+$("#am").innerHTML=A.map(([i,t,d])=>`<div><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[i]}</svg><h3>${t}</h3><p>${d}</p></div>`).join("");
+
+// Booking: price calculation + WhatsApp link
+const bp=$("#bp"),ci=$("#ci"),co=$("#co"),gu=$("#gu"),nm=$("#nm"),nt=$("#nt"),bf=$("#bf");
+bp.innerHTML=P.map(p=>`<option value="${p.id}">${p.name} — ${inr(p.price)}/night</option>`).join("");
+ci.min=co.min=new Date().toISOString().slice(0,10);
+const fd=s=>new Date(s).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"});
+const cur=()=>P.find(x=>x.id===bp.value);
+const fit=()=>{if(+gu.value>cur().max)gu.value=cur().max};
+let err="";
+function calc(){
+  const p=cur(),g=+gu.value,n=ci.value&&co.value?Math.round((Date.parse(co.value)-Date.parse(ci.value))/864e5):0,tot=n>0?p.price*n:0;
+  gu.max=p.max;
+  err=!ci.value||!co.value?"Choose your check-in and check-out dates.":n<1?"Check-out must be after check-in.":!(g>=1)?"Enter the number of guests.":g>p.max?`${p.name} hosts up to ${p.max} guests.`:"";
+  $("#sp").textContent=p.name;$("#sr").textContent=inr(p.price);
+  $("#sn").textContent=n>0?n:"—";$("#st").textContent=n>0?inr(tot):"—";
+  $("#err").textContent="";
+  $("#wa").href=wa([
+    `Hello ${E.name}! I’d like to enquire about a stay.`,
+    `Package: ${p.name} (${inr(p.price)}/night)`,
+    ci.value&&`Check-in: ${fd(ci.value)}`,
+    co.value&&`Check-out: ${fd(co.value)}${n>0?` (${n} night${n>1?"s":""})`:""}`,
+    `Guests: ${g||"—"}`,
+    n>0&&`Estimated total: ${inr(tot)}`,
+    nm.value.trim()&&`Name: ${nm.value.trim()}`,
+    nt.value.trim()&&`Notes: ${nt.value.trim()}`
+  ].filter(Boolean).join("\n"));
+}
+["input","change"].forEach(v=>bf.addEventListener(v,calc));
+bp.onchange=fit; // runs before the form-level listener, so guests are clamped first
+$("#wa").onclick=e=>{calc();if(err){e.preventDefault();$("#err").textContent=err}};
+bf.onsubmit=e=>{e.preventDefault();$("#wa").click()};
+$("#pk").onclick=e=>{const id=e.target.dataset.p;if(id){bp.value=id;fit();calc()}};
+calc();
+</script>
+</body>
+</html>
